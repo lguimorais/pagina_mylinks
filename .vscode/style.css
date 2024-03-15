@@ -8,6 +8,10 @@ body {
   /*backgorund:color image repeat/size*/
   background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
 }
+body *{ font-family: "Inter", sans-serif;
+  color: white;
+
+}
 
 #conteiner {
   width: 360px;
