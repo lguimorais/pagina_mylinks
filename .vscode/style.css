@@ -50,5 +50,14 @@ ul li a{border: solid 1px rgba(255, 255, 255, 0.5);
   padding: 16px 24px;
   background: rgba(255, 255, 255, 0.1);
   border-radius:  8px;
-backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+ /*pseudo-selector*/
+
+ ul li a:hover{border: solid 1.6px white;
+  background: rgba(255, 255, 255, 0.05);
+
 }
