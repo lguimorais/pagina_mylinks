@@ -22,11 +22,23 @@ body *{ font-family: "Inter", sans-serif;
 }
 
 
-:root{--text-color: white;
---bg-url: url(./assets/bg-mobile.jpg);
-
+:root{
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color:rgba(255, 255, 255, 0.5);
+  --surface-color:rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0,0,0,0.02);
+  --highligh-color: rgba(255, 255, 255, 0.2)
 }
 
+.light{ 
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0,0,0,0.5);  
+  --surface-color-hover: rgba(0,0,0,0.02)
+  --surface-color:rgba(0,0,0,0.05)
+  --highligh-color: rgba(0,0,0,0.1)
+}
 
 #conteiner {
   width: 360px;
@@ -55,16 +67,13 @@ ul{list-style: none;
 
 }
 
-.light{ --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
-  
-}
-ul li a{border: solid 1px rgba(255, 255, 255, 0.5);
+
+ul li a{border: solid 1px var(--stroke-color) ;
   justify-content: center;
   display: flex;
   align-items: center;
   padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.1);
+  background:var(--surface-color) ;
   border-radius:  8px;
   -webkit-backdrop-filter: blur(4px);
   text-decoration: none;
@@ -74,7 +83,7 @@ ul li a{border: solid 1px rgba(255, 255, 255, 0.5);
  /*pseudo-selector*/
 
  ul li a:hover{border: solid 1.6px var(--text-color);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-color-hover);
 
 }
 /*social links*/
@@ -95,7 +104,7 @@ ul li a{border: solid 1px rgba(255, 255, 255, 0.5);
   border-radius: 50%;
 }
 #social-links a:hover{
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--highligh-color);
   
   transition: background 0.5s;
 }
