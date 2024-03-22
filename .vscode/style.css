@@ -91,6 +91,7 @@ body *{ font-family: "Inter", sans-serif;
  backdrop-filter: blur(4px);
  -webkit-backdrop-filter: blur(4px);
  border-radius: 9999px;
+ 
 }
 
 .light #switch button{
