@@ -7,7 +7,7 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
-  height: 100vh;
+
 }
 body *{ font-family: "Inter", sans-serif;
   color: var(--text-color);
@@ -18,7 +18,7 @@ body *{ font-family: "Inter", sans-serif;
 
 :root{
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-url: url(./assets/bg-desktop.jpg);
   --stroke-color:rgba(255, 255, 255, 0.5);
   --surface-color:rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0,0,0,0.02);
@@ -28,7 +28,7 @@ body *{ font-family: "Inter", sans-serif;
 
 .light{ 
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --bg-url: url(./assets/bg-desktop-light.jpg);
   --stroke-color: rgba(0,0,0,0.5);  
   --surface-color-hover: rgba(0,0,0,0.02)
   --surface-color:rgba(0,0,0,0.05);
@@ -75,7 +75,10 @@ body *{ font-family: "Inter", sans-serif;
  left: 0;
  z-index: 1;
  transform: translateY(-50%);
-
+ animation: slide-back 0.4s;
+}
+#switch button:hover{
+  outline: 8px solid var(--highligh-color);
 }
 #switch span{
  display: block;
@@ -90,8 +93,7 @@ body *{ font-family: "Inter", sans-serif;
 }
 
 .light #switch button{
-  right: 0;
-  left: initial;
+ animation: slide-in 0.4s forwards;
 }
 
 ul{list-style: none;
@@ -155,11 +157,19 @@ footer{
 /*Media queries*/
 @media(min-width:700px){
   :root{
-   --bg-url: url(./assets/bg-desktop.jpg)
+   --bg-url: url(./assets/bg-desktop.jpg);
   }
 .light{
-    --bg-url: url(./assets/bg-mobile-light.jpg)
+    --bg-url: url(./assets/bg-desktop-light.jpg);
   }
 
+}
+@keyframes slide-in {
+  from{left: 0;}
+  to{left: 50%;}
+}
+@keyframes slide-back {
+  from{left: 50%;}
+  to{left: 0;}
 }
 
